@@ -30,4 +30,34 @@ public class ScannerUtil {
 			System.out.println();
 		}
 	}
+	
+	public static String[] getStrings(int n) {
+		String[] strArray = new String[n];
+		Scanner scanner = new Scanner(System.in);
+		for (int i = 0; i < n; i++) {
+			strArray[i] = scanner.next();
+		}
+		scanner.close();
+		return strArray;
+	}
+	
+	public static int[] getIntegers(int n) {
+		int[] intArray = new int[n];
+		Scanner scanner = new Scanner(System.in);
+		for (int i = 0; i < n; i++) {
+			intArray[i] = scanner.nextInt();
+		}
+		scanner.close();
+		return intArray;
+	}
+	
+	public static char[] getChars(int n) {
+		char[] charArray = new char[n];
+		Scanner scanner = new Scanner(System.in);
+		for (int i = 0; i < n; i++) {
+			charArray[i] = scanner.next().charAt(0);
+		}
+		scanner.close();
+		return charArray;
+	}
 }
