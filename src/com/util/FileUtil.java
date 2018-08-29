@@ -1,17 +1,22 @@
 package com.util;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public class FileUtil {
 
 	private static List<String> lines;
 
-	private FileUtil(String pathname) {
+	public FileUtil() {
 		try {
-			readAllLines(pathname);
+			String pathname = "testcaseinput";
+			ClassLoader classLoader = FileUtil.class.getClassLoader();
+			File file = new File(classLoader.getResource(pathname).getFile());
+			readAllLines(file.getPath());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -23,7 +28,7 @@ public class FileUtil {
 	}
 
 	// Return 'n' integers from test case index 'i'
-	public static int[] getIntegers(int n, int i) {
+	public int[] getIntegers(int n, int i) {
 		int[] intArray = new int[n];
 		String[] line = lines.get(i).split(" ");
 		for (int index = 0; index < n; index++) {
@@ -33,7 +38,7 @@ public class FileUtil {
 	}
 
 	// Return 'n' characters from test case index 'i'
-	public static int[] getCharacters(int n, int i) {
+	public int[] getCharacters(int n, int i) {
 		int[] intArray = new int[n];
 		String[] line = lines.get(i).split(" ");
 		for (int index = 0; index < n; index++) {

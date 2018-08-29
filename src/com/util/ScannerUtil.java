@@ -1,5 +1,7 @@
 package com.util;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ScannerUtil {
@@ -49,6 +51,26 @@ public class ScannerUtil {
 		}
 		scanner.close();
 		return intArray;
+	}
+	
+	public static List<int[]> getDoubleLineIntegers(int m, int n) {
+		int[] intArray = new int[m];
+		Scanner scanner = new Scanner(System.in);
+		for (int i = 0; i < m; i++) {
+			intArray[i] = scanner.nextInt();
+		}
+		scanner.nextLine();
+		List<int[]> listOfIntegerArray = new ArrayList<>();
+		listOfIntegerArray.add(intArray);
+		
+		intArray = new int[n];
+		for (int i = 0; i < n; i++) {
+			intArray[i] = scanner.nextInt();
+		}
+		scanner.close();
+		listOfIntegerArray.add(intArray);
+		
+		return listOfIntegerArray;
 	}
 	
 	public static char[] getChars(int n) {

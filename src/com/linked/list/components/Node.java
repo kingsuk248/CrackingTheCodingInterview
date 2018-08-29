@@ -15,4 +15,10 @@ public class Node {
 		this.iData = iData;
 		this.next = next;
 	}
+	
+	public Node clone(Node node) {
+		Node newNode = new Node();
+		newNode.iData = node.iData;
+		return newNode;
+	}
 }
