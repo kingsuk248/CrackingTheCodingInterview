@@ -7,6 +7,7 @@ package com.linked.list.components;
  */
 public class Node {
 	public int iData;
+	public char cData;
 	public Node next;
 	
 	public Node() {}
@@ -19,6 +20,7 @@ public class Node {
 	public Node clone(Node node) {
 		Node newNode = new Node();
 		newNode.iData = node.iData;
+		newNode.cData = node.cData;
 		return newNode;
 	}
 }

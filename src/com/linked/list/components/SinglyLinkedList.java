@@ -18,9 +18,37 @@ public class SinglyLinkedList {
 		return head;
 	}
 	
+	public static Node insertCharacterElements(char data) {
+		Node newNode = new Node();
+		newNode.cData = data;
+		if (head == null) {
+			head = newNode;
+			return head;
+		}
+		Node currentNode = head;
+		while (currentNode.next != null) {
+			currentNode = currentNode.next;
+		}
+		currentNode.next = newNode;
+		return head;
+	}
+	
 	public Node insertElementsForListInstance(Node head, int data) {
 		Node newNode = new Node();
 		newNode.iData = data;
+		if (head == null) {
+			head = newNode;
+			return head;
+		}
+		Node currentNode = head;
+		while (currentNode.next != null) {
+			currentNode = currentNode.next;
+		}
+		currentNode.next = newNode;
+		return head;
+	}
+	
+	public static Node insertNodeForList(Node head, Node newNode) {
 		if (head == null) {
 			head = newNode;
 			return head;
@@ -53,6 +81,30 @@ public class SinglyLinkedList {
 			currentNode = currentNode.next;
 		}
 		System.out.print(currentNode.iData);
+		System.out.println();
+	}
+	
+	public static void printCharLinkedList(Node headNode) {
+		Node currentNode = headNode;
+		while (currentNode.next != null) {
+			System.out.print(currentNode.cData + "-->");
+			currentNode = currentNode.next;
+		}
+		System.out.print(currentNode.cData);
+		System.out.println();
+	}
+	
+	public static void printNElementsOfLinkedList(Node headNode, int n) {
+		Node currentNode = headNode;
+		for (int i = 0; i < n - 1; i++) {
+			if (currentNode != null) {
+				System.out.print(currentNode.cData + "-->");
+				currentNode = currentNode.next;
+			}
+		}
+		if (currentNode != null) {
+			System.out.print(currentNode.cData);
+		}
 		System.out.println();
 	}
 	

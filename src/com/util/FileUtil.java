@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 
 public class FileUtil {
@@ -38,12 +37,12 @@ public class FileUtil {
 	}
 
 	// Return 'n' characters from test case index 'i'
-	public int[] getCharacters(int n, int i) {
-		int[] intArray = new int[n];
+	public char[] getCharacters(int n, int i) {
+		char[] charArray = new char[n];
 		String[] line = lines.get(i).split(" ");
 		for (int index = 0; index < n; index++) {
-			intArray[index] = line[index].charAt(0);
+			charArray[index] = line[index].charAt(0);
 		}
-		return intArray;
+		return charArray;
 	}
 }
