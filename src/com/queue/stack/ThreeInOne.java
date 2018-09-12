@@ -48,7 +48,7 @@ public class ThreeInOne {
 		public int peek(int stackNum) {
 			if (isEmpty(stackNum))
 				throw new EmptyStackException();
-			int offset = stackNum * stackCapacity + sizes[stackNum];
+			int offset = stackNum * stackCapacity + (sizes[stackNum] - 1);
 			return stacksArray[offset];
 		}
 
@@ -88,6 +88,10 @@ public class ThreeInOne {
 		stack.push(2,  50);
 		stack.push(1,  25);
 		stack.pop(0);
+		printArray(stack.stacksArray);
+		System.out.println("Peeking from stack 0: " + stack.peek(0));
+		System.out.println("Peeking from stack 1: " + stack.peek(1));
+		System.out.println("Peeking from stack 2: " + stack.peek(2));
 		printArray(stack.stacksArray);
 	}
 }

@@ -4,16 +4,16 @@ import java.util.EmptyStackException;
 
 public class StackLL<T> {
 	
-	private static class StackNode<T> {
-		private T data;
-		private StackNode<T> next;
+	public static class StackNode<T> {
+		public T data;
+		public StackNode<T> next;
 		
-		private StackNode(T data) {
+		public StackNode(T data) {
 			this.data = data;
 		}
 	}
 	
-	private StackNode<T> top;
+	public StackNode<T> top;
 	
 	public void push(T data) {
 		StackNode<T> node = new StackNode<T>(data);
