@@ -5,15 +5,10 @@ import com.structure.data.BinaryTree;
 public class BinaryTreeTest {
 	public static void main(String[] args) {
 		BinaryTree binaryTree = new BinaryTree();
-		binaryTree.insertNode(3);
-		binaryTree.insertNode(6);
-		binaryTree.insertNode(2);
-		binaryTree.insertNode(4);
-		binaryTree.insertNode(0);
-		binaryTree.insertNode(1);
-		binaryTree.insertNode(8);
-		binaryTree.insertNode(7);
-		binaryTree.insertNode(5);
+		int[] treeArray = {3, 6, 2, 4, 0, 1, 8, 7, 5, 9};
+		for (Integer i : treeArray) {
+			binaryTree.insertNode(i);
+		}
 		
 		System.out.print("Inorder ====> ");
 		binaryTree.inOrder(binaryTree.root);
@@ -26,5 +21,23 @@ public class BinaryTreeTest {
 		System.out.print("Postorder ====> ");
 		binaryTree.postOrder(binaryTree.root);
 		System.out.println();
+		
+		System.out.println("Found 4 ? " + (binaryTree.findNode(4) == null ? "Nope" : "Yup"));
+		System.out.println("Found 10 ? " + (binaryTree.findNode(20) == null ? "Nope" : "Yup"));
+		
+		System.out.println("Deleting '6' a two-children node");
+		binaryTree.deleteNode(6);
+		System.out.print("Inorder ====> ");
+		binaryTree.inOrder(binaryTree.root);
+		
+		System.out.println("Deleting '8' a one-child node");
+		binaryTree.deleteNode(8);
+		System.out.print("Inorder ====> ");
+		binaryTree.inOrder(binaryTree.root);
+		
+		System.out.println("Deleting '1' a leaf node");
+		binaryTree.deleteNode(1);
+		System.out.print("Inorder ====> ");
+		binaryTree.inOrder(binaryTree.root);
 	}
 }
