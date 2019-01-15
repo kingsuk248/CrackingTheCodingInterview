@@ -47,7 +47,11 @@ public class Stack {
 		cArray[++topCharStack] = cData;
 	}
 	
-	public int popCharStack() {
+	public char popCharStack() {
 		return cArray[topCharStack--];
+	}
+	
+	public char peekCharStack() {
+		return cArray[topCharStack];
 	}
 }

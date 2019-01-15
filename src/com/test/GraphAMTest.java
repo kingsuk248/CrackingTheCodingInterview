@@ -17,6 +17,7 @@ public class GraphAMTest {
 		graph.addEdge(3, 6);
 		graph.addEdge(6, 8);
 		graph.addEdge(0, 4);
+		graph.addEdge(1, 6);
 		
 		System.out.println("==== Depth-First Search");
 		graph.dfs();
