@@ -7,4 +7,16 @@ public class Vertex {
 	public Vertex(char cData) {
 		this.cData = cData;
 	}
+	
+	public boolean isVisited() {
+		return isVisited;
+	}
+	
+	public void setVisited(boolean visited) {
+		this.isVisited = visited;
+	}
+	
+	public char getNodeValue() {
+		return cData;
+	}
 }

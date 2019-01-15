@@ -30,11 +30,18 @@ public class GraphAM {
 	}
 
 	/**
-	 * Add a new edge between start vertex and end vertex
+	 * Add a new undirected edge between start vertex and end vertex
 	 */
 	public void addEdge(int start, int end) {
 		adjMatrix[start][end] = 1;
 		adjMatrix[end][start] = 1;
+	}
+	
+	/**
+	 * Add a new directed edge from start vertex to end vertex
+	 */
+	public void addDirectedEdge(int start, int end) {
+		adjMatrix[start][end] = 1;
 	}
 
 	/**
@@ -99,6 +106,30 @@ public class GraphAM {
 		for (int i = 0; i < numVertices; i++) {
 			vertices[i].isVisited = false;
 		}
+	}
+	
+	/**
+	 * Returns the number of vertices
+	 * @return
+	 */
+	public int getNumberOfVertices() {
+		return numVertices;
+	}
+	
+	/**
+	 * Returns the number of vertices
+	 * @return
+	 */
+	public Vertex[] getVertices() {
+		return vertices;
+	}
+	
+	/**
+	 * Returns the adjacency matrix
+	 * @return
+	 */
+	public int[][] getAdjacencyMatrix() {
+		return adjMatrix;
 	}
 
 	/**
