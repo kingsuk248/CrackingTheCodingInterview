@@ -1,43 +1,17 @@
 package com.test;
 
 import com.structure.data.BinaryTree;
+import com.structure.data.BinaryTree.Queue;
+import com.util.BTreePrinter;
 
 public class BinaryTreeTest {
 	public static void main(String[] args) {
 		BinaryTree binaryTree = new BinaryTree();
-		int[] treeArray = {3, 6, 2, 4, 0, 1, 8, 7, 5, 9};
-		for (Integer i : treeArray) {
-			binaryTree.insertNode(i);
+		Queue queue = binaryTree.new Queue(10);
+		int[] intArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+		for (int i : intArray) {
+			binaryTree.insertNode(i, queue);
 		}
-		
-		System.out.print("Inorder ====> ");
-		binaryTree.inOrder(binaryTree.root);
-		System.out.println();
-		
-		System.out.print("Preorder ====> ");
-		binaryTree.preOrder(binaryTree.root);
-		System.out.println();
-		
-		System.out.print("Postorder ====> ");
-		binaryTree.postOrder(binaryTree.root);
-		System.out.println();
-		
-		System.out.println("Found 4 ? " + (binaryTree.findNode(4) == null ? "Nope" : "Yup"));
-		System.out.println("Found 10 ? " + (binaryTree.findNode(20) == null ? "Nope" : "Yup"));
-		
-		System.out.println("Deleting '6' a two-children node");
-		binaryTree.deleteNode(6);
-		System.out.print("Inorder ====> ");
-		binaryTree.inOrder(binaryTree.root);
-		
-		System.out.println("Deleting '8' a one-child node");
-		binaryTree.deleteNode(8);
-		System.out.print("Inorder ====> ");
-		binaryTree.inOrder(binaryTree.root);
-		
-		System.out.println("Deleting '1' a leaf node");
-		binaryTree.deleteNode(1);
-		System.out.print("Inorder ====> ");
-		binaryTree.inOrder(binaryTree.root);
+		BTreePrinter.printNode(BinaryTree.root);
 	}
 }
